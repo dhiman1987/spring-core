@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="myBean" class="com.dexter.MyBean">
+		<property name="param" value="value1" />
+	</bean>
+
+	<bean id="myBean2" class="com.dexter.MyBean">
+		<property name="param" value="value2" />
+	</bean>
+	<bean id="myBean3" class="com.dexter.MyBean" init-method="init"
+		destroy-method="cleanUp">
+		<property name="param" value="value4" />
+	</bean>
+
+	<bean id="myBean4" class="com.dexter.MyBean" lazy-init="true">
+		<property name="param" value="value4" />
+	</bean>
+	
+	<bean id="myBean5" class="com.dexter.MyBean" scope="prototype">
+		<property name="param" value="value5" />
+	</bean>
+
+</beans>
